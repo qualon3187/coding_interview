@@ -60,7 +60,7 @@ def main(pers):
     weekdate3 = datetime.date(2021, 7, 7)
     people = users()
     meeting = events()
-    user = pers
+    user = []
     workDay = {}
     begin = start
     endtime = start
@@ -69,8 +69,11 @@ def main(pers):
     wd3 = {}
     workList = []
 
-    
-    
+    for p in pers[1:]:
+        for sp in p.split(","):
+            if sp.strip():
+                user.append(sp.strip())
+                
 
     for i in user:
         person = i
@@ -168,4 +171,3 @@ def main(pers):
 
 if __name__ == '__main__':
     main(sys.argv)
-    
