@@ -77,7 +77,30 @@ A dataset of all events on the calendars of all our users.
 
 - Feel free to use whatever language you feel most comfortable working with
 - Please provide instructions for execution of your program
+	-- download zip file from github
+	-- unzip main.py  and json files to same folder location
+	-- open command and cd to location
+	-- in command prompt type python main.py Maggie Joe Jordan
+	--Libraries needed for script:
+		-  json
+		-  sys
+		-  datetime
+
+
 - Please include a description of your approach to the problem, as well as any documentation about
   key parts of your code.
+	-- My approach was to create dictionaries and return datetime values use date to string function. Starting 
+	   by creating functions for storing user.json and events.json. The function used in correlation with sys.args to create the 
+	   relations between files, so only correct values would appear per person. Calendar function was create using 15 min intervals
+	   for time purpose. The calendar was used with the scheduleDay to create a pattern inside the dictionary created in the calendar
+	   function. Using the final workDay calendar, we had more patterns and insert into seperate dictionaries using the pattern logic. 
+	   Once the three seperate dictionaries are populated, each dictionary is loop through and returns available time frames using logic 
+	   consists of the keys and values. All the printing and logic are contained inside the main user loop. 
+	   Loop structure = Person name-> finds person id from user.json-> id is matched to user_id in events.json 
+	   - used to get start_time and end_time which starts is used to logic of script
+
+	   --Calendar can be changed to 1 min to account for times not in 15 min increments
+
+
 - You'll notice that all our events start and end on 15 minute blocks. However, this is not a strict
   requirement. Events may start or end on any minute (for example, you may have an event from 13:26 - 13:54).
